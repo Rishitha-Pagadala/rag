@@ -56,6 +56,7 @@ class HyDERetriever:
 
         text = self.gen_api.text_generation(
             prompt,
+            model="facebook/opt-1.3b",
             max_new_tokens=max_length,
             do_sample=False,
         )
