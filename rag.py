@@ -8,7 +8,7 @@ import faiss
 
 # Default model IDs
 EMBEDDING_MODEL = "sentence-transformers/all-MiniLM-L6-v2"
-GENERATION_MODEL = "facebook/opt-1.3b" 
+GENERATION_MODEL = "google/gemma-2-9b" 
 
 
 class HyDERetriever:
@@ -17,7 +17,7 @@ class HyDERetriever:
         self.embedder = SentenceTransformer("sentence-transformers/all-MiniLM-L6-v2")
 
         # HuggingFace Inference Client for generation
-        self.gen_api = InferenceClient(model="facebook/opt-1.3b", token=hf_token)
+        self.gen_api = InferenceClient(model="google/gemma-2-9b", token=hf_token)
 
         # store documents
         self.docs = docs
